@@ -1,11 +1,16 @@
 const express = require('express');
-
+const connectDB = require('./config/db');
 const app = express();
-
 const PORT = process.env.PORT || 5000;
 
+// Connect to database
+connectDB();
+
+// Init middleware
+app.use(express.json({ extended: false }));
+
 app.get("/", (_req, res) => {
-    res.send("Hello world!");
+    res.send("Contact Keeper API is UP!");
 });
 
 // Define our routes

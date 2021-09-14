@@ -1,1 +1,57 @@
-GET http://localhost:5000/
+GET http://localhost:5000
+Content-Type: application/json
+
+###
+POST http://localhost:5000/api/users
+Content-Type: application/json
+
+{
+    "name": "Max Power",
+    "email": "maxpower@gmail.com",
+    "password": "12345678"
+}
+
+###
+POST http://localhost:5000/api/auth
+Content-Type: application/json
+
+{
+    "email": "maxpower@gmail.com",
+    "password": "12345678"
+}
+
+###
+GET http://localhost:5000/api/auth
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE0MGI3NmQxMGZjNDQyYjRjMjA1NjJiIn0sImlhdCI6MTYzMTYzMjk1OCwiZXhwIjoxNjMxNjY4OTU4fQ.n25IrD_v4KoN_NKTIZkdLhlGEd6NHUTCkgtlb6K4H2o
+
+###
+GET http://localhost:5000/api/contacts
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE0MGM3NDM4YjgwOGJmN2MwYzQ4OGZlIn0sImlhdCI6MTYzMTYzNTkxNywiZXhwIjoxNjMxNjcxOTE3fQ.oTyJXlTn8haZOG6tGycyyXYeHU58ghPJgU7qffYjPnc
+
+###
+POST http://localhost:5000/api/contacts
+Content-Type: application/json 
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE0MGM3NDM4YjgwOGJmN2MwYzQ4OGZlIn0sImlhdCI6MTYzMTYzNTkxNywiZXhwIjoxNjMxNjcxOTE3fQ.oTyJXlTn8haZOG6tGycyyXYeHU58ghPJgU7qffYjPnc
+
+{
+    "name": "Mark Cuban",
+    "email": "cuban@gmail.com",
+    "phone": "222-100-211"
+}
+
+###
+PUT http://localhost:5000/api/contacts/6140c811cfd914392b6ddfeb1
+Content-Type: application/json 
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE0MGI3NmQxMGZjNDQyYjRjMjA1NjJiIn0sImlhdCI6MTYzMTYzNTI3MywiZXhwIjoxNjMxNjcxMjczfQ.bAdjbRLaKlb-zVt3GIVFgx7t6H5_GnlFj1VUrpZoqSk
+
+{
+    "name": "Markus Dok",
+    "phone": "222-111-201"
+}
+
+###
+DELETE http://localhost:5000/api/contacts/6140c871cfd914392b6ddff2
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE0MGI3NmQxMGZjNDQyYjRjMjA1NjJiIn0sImlhdCI6MTYzMTYzNTI3MywiZXhwIjoxNjMxNjcxMjczfQ.bAdjbRLaKlb-zVt3GIVFgx7t6H5_GnlFj1VUrpZoqSk
